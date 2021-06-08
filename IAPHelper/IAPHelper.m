@@ -208,9 +208,9 @@
     
     NSLog(@"count = %zd,indentity = %@,count = %@,price = %@",count,indentify,userName,price);
 
-    if ([SubscribeManager shared].isSubscribe) {
-        return NO;
-    }
+//     if ([SubscribeManager shared].isSubscribe) {
+//         return NO;
+//     }
     
     return YES;
 }
