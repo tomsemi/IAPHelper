@@ -199,6 +199,22 @@
     
 }
 
+- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product {
+    //qua
+    NSInteger count = payment.quantity;
+    NSString *indentify = payment.productIdentifier;
+    NSString *userName = payment.applicationUsername;
+    NSString *price = product.price.stringValue;
+    
+    NSLog(@"count = %zd,indentity = %@,count = %@,price = %@",count,indentify,userName,price);
+
+    if ([SubscribeManager shared].isSubscribe) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
     
